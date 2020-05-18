@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CadastroUsuarioApp.Views.UsuarioEdicaoView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <ImageButton Source="http://lorempixel.com/96/96/people/"
+                         HeightRequest="65"
+                         WidthRequest="60"
+                         Aspect="AspectFill"
+                         x:Name="vFoto"
+                         VerticalOptions="CenterAndExpand"/>
+            <Label Text="Nome"/>
+            <Entry Placeholder="Nome"
+                   Keyboard="Text"
+                   x:Name="vNome"
+                   Text="{Binding Nome, Mode=TwoWay}"/>
+            <Label Text="Idade"/>
+            <Entry Placeholder="Idade"
+                   Keyboard="Numeric"
+                   x:Name="vIdade"
+                   Text="{Binding Idade, Mode=TwoWay}"/>
+            <Label Text="E-mail"/>
+            <Entry Placeholder="E-mail"
+                   Keyboard="Email"
+                   x:Name="vEmail"
+                   Text="{Binding Email, Mode=TwoWay}"/>
+            <Button Text="Salvar" VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

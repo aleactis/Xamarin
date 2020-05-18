@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CadastroUsuarioApp.Views.UsuarioListaView"
+             BackgroundImageSource="round_favorite_black_48.png">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="round_face_black_24.png" 
+                   WidthRequest="32"
+                   Aspect="AspectFit"/>
+            <Label Text="Usuarios"
+                   FontSize="Title"
+                   TextColor="White"
+                   VerticalOptions="Center"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="corFundo">#dcdcdc</Color>
+            <Color x:Key="corTexto">#cccccc</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="#42c0e3"/>
+            </Style>
+
+            <Style TargetType="Label"
+                   x:Key="rotuloStyle">
+                <Setter Property="TextColor"
+                        Value="Orange"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnAdicionar" 
+                     Text="Adicionar"
+                     Clicked="btnAdicionar_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent">
+            <SearchBar x:Name="vBusca"
+                       Placeholder="Busca">
+            </SearchBar>
+            <ListView x:Name="vLista"
+                      HasUnevenRows="True"
+                      ItemSelected="vLista_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White">
+                                <Label Text="{Binding Nome}"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold"
+                                       Style="{StaticResource rotuloStyle}"/>
+                                <Label Text="{Binding Idade}"
+                                       FontSize="Small"
+                                       FontAttributes="Italic"/>
+                                <Label Text="{Binding Email}"
+                                       FontSize="Micro"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
