@@ -1,12 +1,6 @@
 ﻿using CadastroUsuarioApp.Model;
-using SQLite;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -66,7 +60,7 @@ namespace CadastroUsuarioApp.Views
             }
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void BtnSalvar_Clicked(object sender, EventArgs e)
         {
             //Verifica se o cadastro está preenchido
             if (usuarioContext != null)
@@ -137,7 +131,7 @@ namespace CadastroUsuarioApp.Views
             return retorno;
         }
 
-        private void BtnExcluirCadastro_Clicked(object sender, EventArgs e)
+        private void BtnExcluir_Clicked(object sender, EventArgs e)
         {
             if (usuarioContext != null)
             {

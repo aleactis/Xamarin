@@ -28,9 +28,19 @@
                    Keyboard="Email"
                    x:Name="vEmail"
                    Text="{Binding Email, Mode=TwoWay}"/>
-            <Button Text="Salvar" VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    Clicked="Button_Clicked"/>
+            <FlexLayout HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                <Button x:Name="btnSalvarPessoa"
+                        Text="Salvar"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="BtnSalvar_Clicked"/>
+                <Button x:Name="btnExcluirCadastro"
+                                Text="Excluir"
+                                VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                        Clicked="BtnExcluir_Clicked"/>
+            </FlexLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
